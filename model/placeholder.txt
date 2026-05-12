@@ -1,0 +1,1 @@
+This folder contains the MC Dropout model code (Generator, Train, Propagator).
