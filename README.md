@@ -6,9 +6,8 @@ NV Centre Magnetometry - MC Dropout Uncertainty Quantification
 
 **NV Centre Magnetometry — MC Dropout Uncertainty Quantification**
 
-**Author:** Yue Yu, TU Dresden / ct.qmat
-**Supervisor:** Aparajita Singha
-**Postdoc:** Shirsopratim Chattopadhyay
+**Author:** Yue Yu, Shirsopratim Chattopadhyay, TU Dresden / ct.qmat
+
 
 ---
 
