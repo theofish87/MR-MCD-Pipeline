@@ -1,1 +1,3 @@
-This folder contains the MC Dropout model code (Generator, Train, Propagator).
+The model code is based on Dubois et al. (2022)
+
+Our modifications (MC Dropout + Fixed BatchNorm) are in Generator.py and Train.py.
