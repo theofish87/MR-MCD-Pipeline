@@ -1,0 +1,2 @@
+This folder contains ubermag micromagnetic simulation scripts.
+Run locally on PC, outputs uploaded to Google Drive.
