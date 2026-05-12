@@ -1,2 +1,50 @@
 This folder contains ubermag micromagnetic simulation scripts.
 Run locally on PC, outputs uploaded to Google Drive.
+
+Ubermag Micromagnetic Simulations
+===================================
+
+Purpose:
+  Generate synthetic magnetic domain data with known ground truth
+  for validation and calibration of the MC Dropout model.
+
+Software:
+  ubermag (OOMMF backend)
+  https://ubermag.github.io
+
+Simulation cases:
+  1. Neel_Domainwall.ipynb
+     - Single centered Néel domain wall
+     - Wall perpendicular to x-axis
+     - Left half: +Mz, Right half: -Mz
+     - Domain wall type: Néel (in-plane My perpendicular to wall)
+     - Domain wall width: δ = π√(A/K) ≈ 13.6 nm
+     - Reference: Tetienne et al., Nat. Commun. 6, 6733 (2015)
+
+  2. C1_Skyrmion.ipynb
+     - Single centered Néel skyrmion
+     - Core: -Mz, Background: +Mz
+     - Skyrmion radius: r₀ = 80 nm
+
+Material parameters (Co/Pt system):
+  Ms  = 5.8e5 A/m   (saturation magnetisation)
+  A   = 1.5e-11 J/m  (exchange stiffness)
+  D   = 3.0e-3 J/m²  (interfacial DMI, Cnv_z → Néel type)
+  K   = 0.8e6 J/m³   (uniaxial anisotropy, easy OOP)
+
+Geometry:
+  Mesh:      256 × 256 pixels
+  Pixel size: 5 nm
+  NV height:  50 nm
+
+Output files (saved locally, uploaded to Google Drive):
+  Bz_NV_*.npy      ← NV stray field (input to MC model)
+  Mz_true_*.npy    ← Ground truth magnetisation
+  *.json           ← Simulation metadata
+  *.png            ← Visualisation plots
+
+Workflow:
+  1. Run simulation locally on PC
+  2. Upload dated output folder to Google Drive:
+     ubermag_data/[case_name]/YYYYMMDD_XX/
+  3. Reconstruction notebook auto-loads latest data
